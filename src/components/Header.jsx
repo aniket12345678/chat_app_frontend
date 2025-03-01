@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container, Navbar } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { logout } from '../redux/reducers';
+import { logout, resetData } from '../redux/reducers';
 import { useNavigate } from 'react-router-dom';
 import { changeToUpperCase } from '../common/method';
 
@@ -12,6 +12,7 @@ const Header = () => {
 
     const handleLogout = () => {
         dispatch(logout());
+        dispatch(resetData());
         navigate('/');
     }
     return (

@@ -15,6 +15,7 @@ export const authSlice = createSlice({
             state.user = null;
             state.token = null;
             state.isLoggedIn = false;
+            state.allUsers = [];
         }
     },
     extraReducers: (builder) => {
@@ -48,6 +49,10 @@ export const chatSlice = createSlice({
     reducers: {
         resetData: (state) => {
             state.allMessages = [];
+            state.chatObj = {
+                selected_id: '',
+                user_name: '',
+            }
         },
         handleChatObj: (state, action) => {
             state.chatObj = action.payload
